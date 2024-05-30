@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.MineFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/my_light_primary"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/back"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:text="我的"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:background="@color/my_light_primary"
+            android:layout_height="100dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/mine"
+                android:layout_height="50dp"/>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="35dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="25dp"
+                android:textSize="20sp"
+                android:text="第十组"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="我的地址"
+            android:gravity="left"
+            android:drawableLeft="@drawable/guide"
+            android:drawablePadding="8dp"
+            android:paddingTop="15dp"
+            android:layout_height="50dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:text="我的评论"
+            android:gravity="left"
+            android:drawableLeft="@drawable/baseline_book_24"
+            android:drawablePadding="8dp"
+            android:paddingTop="15dp"
+            android:layout_height="50dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:text="我的投诉"
+            android:gravity="left"
+            android:drawableLeft="@drawable/baseline_phone_in_talk_24"
+            android:drawablePadding="8dp"
+            android:paddingTop="15dp"
+            android:layout_height="50dp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/my_light_primary"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/back"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:text="首页"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@mipmap/guangao"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="5dp"
+            android:padding="5dp"
+            android:layout_height="100dp"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:columnCount="5"
+            android:orientation="horizontal"
+            android:rowCount="2"
+            android:layout_height="100dp">
+
+            <TextView
+                android:layout_width="80dp"
+                android:gravity="center"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:text="共享区"/>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="0"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:layout_column="1"
+                android:text="快递代拿"/>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="0"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:layout_column="2"
+                android:text="电机专区"/>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="0"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:layout_column="3"
+                android:text="进店立减"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:text="奶茶甜品" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:gravity="center"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:text="汉堡披萨"/>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="1"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:layout_column="1"
+                android:text="米粉面点"/>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="1"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:layout_column="2"
+                android:text="共麻辣烫"/>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="1"
+                android:drawableTop="@drawable/rice_bowl"
+                android:textColor="#838383"
+                android:layout_column="3"
+                android:text="风味小吃"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_row="1"
+                android:layout_column="4"
+                android:textColor="#838383"
+                android:drawableTop="@drawable/rice_bowl"
+                android:text="轻食主义" />
+
+        </GridLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@mipmap/guangao"
+            android:scaleType="centerCrop"
+            android:layout_height="100dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/store"
+            tools:listitem="@layout/store_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:id="@+id/store_img"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/store"
+        android:layout_height="100dp"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/store_title"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:text="车记片皮烤鸭卷"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/store_num"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:text="月售237单"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/store_price"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:text="起送价￥0配送费￥0起"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/store_details"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:layout_marginLeft="220dp"
+            android:textSize="10sp"
+            android:textColor="#FCC242"
+            android:text="外送"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:textColor="#EF0202"
+            android:textSize="10sp"
+            android:text="10元立减券"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
