@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.androidcourse.anlaiye_test1.db.UserDbHelper;
 import com.androidcourse.anlaiye_test1.entity.UserInfo;
+
+import java.util.Random;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText et_username;
@@ -100,5 +103,29 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //点击短信登录
+        findViewById(R.id.smsLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 获取接收者号码
+                String recipient = "2252234"; // 替换为实际的接收者号码
+
+                // 生成随机四位数字
+                String randomCode = generateRandomCode();
+
+                // 启动短信应用并填入接收者和短信内容
+                Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
+                smsIntent.setData(Uri.parse("smsto:" + recipient));
+                smsIntent.putExtra("sms_body",  randomCode);
+                startActivity(smsIntent);
+            }
+        });
+    }
+
+    // 生成随机四位数字
+    private String generateRandomCode() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(9000) + 1000; // 生成1000到9999之间的随机数
+        return String.valueOf(randomNumber);
     }
 }
