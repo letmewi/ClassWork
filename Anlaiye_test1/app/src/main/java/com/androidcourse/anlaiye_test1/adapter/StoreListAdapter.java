@@ -43,6 +43,16 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyHo
         holder.store_details.setText(storeInfo.getStore_details());
         holder.store_num.setText(storeInfo.getStore_num());
         holder.store_num.setText(storeInfo.getStore_num());
+
+        //点击事件
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != mOnItemClickListener){
+                    mOnItemClickListener.onItemClick();
+                }
+            }
+        });
     }
 
     @Override
@@ -66,5 +76,18 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyHo
             store_price = itemView.findViewById(R.id.store_price);
             store_details = itemView.findViewById(R.id.store_details);
         }
+    }
+
+
+
+
+    public void setmOnItemClickListener(onItemClickListener mOnItemClickListener) {
+        this.mOnItemClickListener = mOnItemClickListener;
+    }
+
+    private onItemClickListener mOnItemClickListener;
+
+    public interface onItemClickListener{
+        void onItemClick();
     }
 }

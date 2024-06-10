@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+    
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/p_img"
+            android:layout_width="100dp"
+            android:src="@drawable/store"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/p_title"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:text="五荤六素套餐"/>
+            <TextView
+                android:id="@+id/p_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="销量：259"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_currency_yen_24"/>
+                <TextView
+                    android:id="@+id/p_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="17.90"
+                    android:textStyle="bold"
+                    android:textColor="#EF9002"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
