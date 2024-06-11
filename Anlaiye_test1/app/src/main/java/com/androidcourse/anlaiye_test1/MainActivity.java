@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.androidcourse.anlaiye_test1.fragment.CarFragment;
 import com.androidcourse.anlaiye_test1.fragment.HomeFragment;
 import com.androidcourse.anlaiye_test1.fragment.MineFragment;
 import com.androidcourse.anlaiye_test1.fragment.OrderFragment;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment mHomeFragment;
     private OrderFragment mOrderFragment;
     private MineFragment mMineFragment;
+    private CarFragment mCarFragment;
 
     private BottomNavigationView mBottomNavigationView;
 
@@ -34,10 +36,13 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId()==R.id.home){
                     selectedFragment(0);
-                } else if (item.getItemId()==R.id.order) {
+                } else if (item.getItemId()==R.id.car) {
                     selectedFragment(1);
-                }else {
+                }else if (item.getItemId()==R.id.order) {
                     selectedFragment(2);
+                }
+                else {
+                    selectedFragment(3);
                 }
                 return true;
             }
@@ -59,13 +64,22 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.show(mHomeFragment);
             }
         } else if (position == 1) {
+            if(mCarFragment == null){
+                mCarFragment = new CarFragment();
+                fragmentTransaction.add(R.id.content,mCarFragment);
+            }else {
+                fragmentTransaction.show(mCarFragment);
+                mCarFragment.dataLoad();
+            }
+        }else if (position == 2) {
             if(mOrderFragment == null){
                 mOrderFragment = new OrderFragment();
                 fragmentTransaction.add(R.id.content,mOrderFragment);
             }else {
                 fragmentTransaction.show(mOrderFragment);
             }
-        }else {
+        }
+        else {
             if(mMineFragment == null){
                 mMineFragment = new MineFragment();
                 fragmentTransaction.add(R.id.content,mMineFragment);
@@ -80,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
     private void hideFragment(FragmentTransaction fragmentTransaction){
         if(mHomeFragment!=null){
             fragmentTransaction.hide(mHomeFragment);
+        }
+        if(mCarFragment != null){
+            fragmentTransaction.hide(mCarFragment);
         }
         if(mOrderFragment!=null){
             fragmentTransaction.hide(mOrderFragment);

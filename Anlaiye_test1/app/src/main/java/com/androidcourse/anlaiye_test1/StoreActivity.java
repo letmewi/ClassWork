@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.androidcourse.anlaiye_test1.adapter.LeftListAdapter;
 import com.androidcourse.anlaiye_test1.adapter.RightListAdapter;
+import com.androidcourse.anlaiye_test1.db.CarDbHelper;
 import com.androidcourse.anlaiye_test1.entity.DataService;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ public class StoreActivity extends AppCompatActivity {
 
     private List<String> leftDataList = new ArrayList<>();
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +52,7 @@ public class StoreActivity extends AppCompatActivity {
         mLeftListAdapter = new LeftListAdapter(leftDataList);
         leftListView.setAdapter(mLeftListAdapter);
 
-        mRightListAdapter = new RightListAdapter();
+        mRightListAdapter = new RightListAdapter(this);
         rightListView.setAdapter(mRightListAdapter);
         //默认加载新品上市
         mRightListAdapter.setListData(DataService.getProductListData(0));
@@ -64,6 +67,8 @@ public class StoreActivity extends AppCompatActivity {
                 mRightListAdapter.setListData(DataService.getProductListData(position));
             }
         });
+
+
 
     }
 }

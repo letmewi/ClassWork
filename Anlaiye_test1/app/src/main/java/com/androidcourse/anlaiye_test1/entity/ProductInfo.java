@@ -6,6 +6,7 @@ public class ProductInfo {
     private String p_title;
     private int p_price;
     private String p_num;
+    private int add;
 
     public String getP_num() {
         return p_num;
@@ -21,6 +22,23 @@ public class ProductInfo {
         this.p_title = p_title;
         this.p_price = p_price;
         this.p_num = p_num;
+    }
+
+    public ProductInfo(int p_id, int p_img, String p_title, int p_price, String p_num, int add) {
+        this.p_id = p_id;
+        this.p_img = p_img;
+        this.p_title = p_title;
+        this.p_price = p_price;
+        this.p_num = p_num;
+        this.add = add;
+    }
+
+    public int getAdd() {
+        return add;
+    }
+
+    public void setAdd(int add) {
+        this.add = add;
     }
 
     public int getP_id() {

@@ -28,15 +28,15 @@ public class DataService {
     public static List<ProductInfo> getProductListData(int position){
         List<ProductInfo> list = new ArrayList<>();
         if (position == 0){
-            list.add(new ProductInfo(0,R.drawable.store,"一荤二素套餐", 26,"销量：259"));
+            list.add(new ProductInfo(0,R.drawable.store,"一荤二素套餐", 26,"销量：259",R.drawable.add));
         } else if (position == 1) {
-            list.add(new ProductInfo(0,R.drawable.store,"二荤三素套餐", 26,"销量：259"));
+            list.add(new ProductInfo(1,R.drawable.store,"二荤三素套餐", 26,"销量：259",R.drawable.add));
         } else if (position == 2) {
-            list.add(new ProductInfo(0,R.drawable.store,"三荤四素套餐", 26,"销量：259"));
+            list.add(new ProductInfo(2,R.drawable.store,"三荤四素套餐", 26,"销量：259",R.drawable.add));
         } else if (position == 3) {
-            list.add(new ProductInfo(0,R.drawable.store,"四荤五素套餐", 26,"销量：259"));
+            list.add(new ProductInfo(3,R.drawable.store,"四荤五素套餐", 26,"销量：259",R.drawable.add));
         } else if (position == 4) {
-            list.add(new ProductInfo(0,R.drawable.store,"五荤六素套餐", 26,"销量：259"));
+            list.add(new ProductInfo(4,R.drawable.store,"五荤六素套餐", 26,"销量：259",R.drawable.add));
         }
         return list;
     }

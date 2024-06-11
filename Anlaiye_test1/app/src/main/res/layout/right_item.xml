@@ -32,10 +32,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="销量：259"/>
+
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_height="wrap_content">
+
 
                 <ImageView
 
@@ -52,10 +55,24 @@
                     android:textStyle="bold"
                     android:textColor="#EF9002"/>
 
+                <ImageView
+                    android:id="@+id/add"
+                    android:elevation="5dp"
+                    android:layout_gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/add"/>
+
+
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+
         </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
