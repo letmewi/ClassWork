@@ -10,16 +10,7 @@ public class OrderDataService {
     public static List<OrderInfo> getListData(){
         List<OrderInfo> list = new ArrayList<>();
 
-        list.add(new OrderInfo(0, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(1, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(2, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(3, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(4, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(5, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(5, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(5, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(5, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
-        list.add(new OrderInfo(5, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
+//        list.add(new OrderInfo(0, R.drawable.store,"汉堡王（共享区）","2024-05-17 11:28:27","总计￥36.90","再来一单"));
         return list;
     }
 }

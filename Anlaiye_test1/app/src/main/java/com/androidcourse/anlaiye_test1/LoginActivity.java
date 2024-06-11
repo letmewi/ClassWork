@@ -80,6 +80,9 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putBoolean("is_login",is_login);
                             editor.commit();
 
+                            //保存登录用户信息
+                            UserInfo.setsUserInfo(login);
+
                             //登录成功
                             Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                             startActivity(intent);

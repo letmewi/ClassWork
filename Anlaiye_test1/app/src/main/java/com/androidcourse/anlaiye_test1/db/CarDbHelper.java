@@ -77,7 +77,7 @@ public class CarDbHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put("product_count",carInfo.getProduct_count()+1);
         int update = db.update("car_table",values,"car_id=?",new String[]{car_id+""});
-        db.close();;
+        db.close();
         return update;
     }
 
@@ -88,7 +88,7 @@ public class CarDbHelper extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             values.put("product_count",carInfo.getProduct_count()-1);
             int update = db.update("car_table",values,"car_id=?",new String[]{car_id+""});
-            db.close();;
+            db.close();
             return update;
         }
 
@@ -100,7 +100,7 @@ public class CarDbHelper extends SQLiteOpenHelper {
 
         int delete = db.delete("car_table","car_id=?",new String[]{car_id});
 
-        db.close();;
+        db.close();
         return delete;
     }
     //根据用户名和id判断是否添加过商品到购物车

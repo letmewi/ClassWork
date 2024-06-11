@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.add(R.id.content,mOrderFragment);
             }else {
                 fragmentTransaction.show(mOrderFragment);
+                mOrderFragment.dataLoad();
             }
         }
         else {

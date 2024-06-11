@@ -13,12 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidcourse.anlaiye_test1.R;
 import com.androidcourse.anlaiye_test1.adapter.CarListAdapter;
 import com.androidcourse.anlaiye_test1.db.CarDbHelper;
+import com.androidcourse.anlaiye_test1.db.OrderDbHelper;
 import com.androidcourse.anlaiye_test1.entity.CarInfo;
 import com.androidcourse.anlaiye_test1.entity.ProductInfo;
+import com.androidcourse.anlaiye_test1.entity.UserInfo;
 
 import java.util.List;
 
@@ -101,6 +104,25 @@ public class CarFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                UserInfo userInfo = UserInfo.getsUserInfo();
+                if (null!=userInfo){
+                    List<CarInfo> carList = CarDbHelper.getInstance(getActivity()).quertCarList(userInfo.getUsername());
+
+                    if (carList.size()==0){
+                        Toast.makeText(getActivity(), "还没有添加商品", Toast.LENGTH_SHORT).show();
+                    }else {
+                        //批量将购物车生成订单
+                        OrderDbHelper.getInstance(getActivity()).insertByAll(carList,"上海海洋大学","13388888888");
+
+                        //清空购物车
+                        for(int i=0;i<carList.size();i++){
+                            CarDbHelper.getInstance(getActivity()).delete(carList.get(i).getCar_id()+"");
+                        }
+
+                        dataLoad();
+                    }
+                }
+
             }
         });
 
@@ -121,11 +143,16 @@ public class CarFragment extends Fragment {
     }
 
     public void dataLoad(){
-        //获取数据
-        List<CarInfo> carList = CarDbHelper.getInstance(getActivity()).quertCarList("zzz");
-        //设置数据
-        mCarListAdapter.setCarList(carList);
+        UserInfo userInfo = UserInfo.getsUserInfo();
+        if(null!=userInfo){
+            //获取数据
+            List<CarInfo> carList = CarDbHelper.getInstance(getActivity()).quertCarList(userInfo.getUsername());
+            //设置数据
+            mCarListAdapter.setCarList(carList);
 
-        setSumData(carList);
+            setSumData(carList);
+
+        }
+
     }
 }

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.androidcourse.anlaiye_test1.R;
 import com.androidcourse.anlaiye_test1.db.CarDbHelper;
 import com.androidcourse.anlaiye_test1.entity.ProductInfo;
+import com.androidcourse.anlaiye_test1.entity.UserInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,12 +80,12 @@ public class RightListAdapter extends RecyclerView.Adapter<RightListAdapter.MyHo
             add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    UserInfo userInfo = UserInfo.getsUserInfo();
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
                         ProductInfo productInfo = mProductInfo.get(position);
                         CarDbHelper dbHelper = CarDbHelper.getInstance(context);
-                        int row = dbHelper.addCar("zzz", productInfo.getP_id(), productInfo.getP_img(), productInfo.getP_title(), productInfo.getP_price());
-                        // 这里的 "username" 应该是实际用户名
+                        int row = dbHelper.addCar(userInfo.getUsername(), productInfo.getP_id(), productInfo.getP_img(), productInfo.getP_title(), productInfo.getP_price());
                         if (row>0){
                             Toast.makeText(context, productInfo.getP_title() + " 已添加到购物车", Toast.LENGTH_SHORT).show();
                         }else {
